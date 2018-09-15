@@ -1,11 +1,13 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 const ButtonsView = function(){
 
 }
 
 ButtonsView.prototype.bindEvents = function(){
-    PubSub.subscribe('Weather:all-info-ready', (event)=>{
-        const allWeatherData = event.detail;
-        console.log(allWeatherData);
+    PubSub.subscribe('Sunset:info-ready', (event)=>{
+        const sunsetData = event.detail;
+        console.log(sunsetData);
     });
 }
 
