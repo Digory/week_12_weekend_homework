@@ -46,9 +46,13 @@ ChartView.prototype.createTableElements = function(){
     this.row2 = this.body.insertRow(0);
     this.row3 = this.body.insertRow(1);
     this.row4 = this.body.insertRow(2);
+    this.thTitle = document.createElement('th');
+    this.thTitle2 = document.createElement('th');
     this.th1 = document.createElement('th');
     this.th2 = document.createElement('th');
     this.th3 = document.createElement('th');
+    this.row1.appendChild(this.thTitle);
+    this.row1.appendChild(this.thTitle2);
     this.row2.appendChild(this.th1);
     this.row3.appendChild(this.th2);
     this.row4.appendChild(this.th3);
@@ -59,6 +63,8 @@ ChartView.prototype.createTableElements = function(){
 }
 
 ChartView.prototype.insertDataIntoTable = function(){
+    this.thTitle.textContent = "Hours";
+    this.thTitle2.textContent = "Hours";
     this.th1.textContent = "yesterday";
     this.cell1.innerHTML = this.numberFormat(this.multipleDaysData.yesterday);
     this.th2.textContent = "today";

@@ -23,10 +23,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const hoursOfSun = new HoursOfSun();
   hoursOfSun.bindEvents();
 
-
-  // const todaysDate = new Date().toJSON().slice(0,10);
-  // console.log(todaysDate);
-  // const tomorrow = new Date();
-  // tomorrow.setDate(tomorrow.getDate()+1);
-  // console.log(tomorrow);
 })
