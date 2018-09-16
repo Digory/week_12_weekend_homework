@@ -2,6 +2,7 @@ const Sunset = require('./models/sunset.js');
 const SearchView = require('./views/search_view.js');
 const SunsetView = require('./views/sunset_view.js');
 const ChartView = require('./views/chart_view.js'); 
+const HoursOfSun = require('./models/hours_of_sun.js');
 
 document.addEventListener('DOMContentLoaded', ()=>{
   const sunset = new Sunset();
@@ -18,5 +19,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const chartContainer = document.querySelector('#chart-container');
   const chartView = new ChartView(chartContainer);
   chartView.bindEvents();
-  
+
+  const hoursOfSun = new HoursOfSun();
+  hoursOfSun.bindEvents();
+
+
+  // const todaysDate = new Date().toJSON().slice(0,10);
+  // console.log(todaysDate);
+  // const tomorrow = new Date();
+  // tomorrow.setDate(tomorrow.getDate()+1);
+  // console.log(tomorrow);
 })

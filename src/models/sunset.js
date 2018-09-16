@@ -6,11 +6,11 @@ const Sunset = function(){
 
 Sunset.prototype.bindEvents = function(){
     PubSub.subscribe('SearchView:searched-postcode-ready', (event)=>{
-        this.findSunsetData(event.detail);
+        this.findData(event.detail);
     })
 }
 
-Sunset.prototype.findSunsetData = function(postcode){
+Sunset.prototype.findData = function(postcode){
     const postcodeRequest = new RequestHelper(`https://api.postcodes.io/postcodes/${postcode}`);
     postcodeRequest.get()
     .then((data)=>{

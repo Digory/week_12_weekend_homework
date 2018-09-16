@@ -8,7 +8,6 @@ SunsetView.prototype.bindEvents = function(){
     PubSub.subscribe('Sunset:info-ready', (event)=>{
         const sunsetData = event.detail;
         this.render(sunsetData);
-        console.log(sunsetData.results.day_length);
     });
 }
 
