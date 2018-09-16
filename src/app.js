@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const sunset = new Sunset();
   sunset.bindEvents();
 
-  const sunsetView = new SunsetView();
+  const sunsetContainer = document.querySelector('#sunset-time');
+  const sunsetView = new SunsetView(sunsetContainer);
   sunsetView.bindEvents();
 
   const searchBar = document.querySelector('#searchbar');
