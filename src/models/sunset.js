@@ -4,8 +4,14 @@ const RequestHelper = require('../helpers/request_helper.js');
 const Sunset = function(){
 }
 
-Sunset.prototype.getData = function(){
-    const postcodeRequest = new RequestHelper('https://api.postcodes.io/postcodes/eh530qz');
+Sunset.prototype.bindEvents = function(){
+    PubSub.subscribe('SearchView:searched-postcode-ready', (event)=>{
+        this.findSunsetData(event.detail);
+    })
+}
+
+Sunset.prototype.findSunsetData = function(postcode){
+    const postcodeRequest = new RequestHelper(`https://api.postcodes.io/postcodes/${postcode}`);
     postcodeRequest.get()
     .then((data)=>{
         const latitude = data.result.latitude;
