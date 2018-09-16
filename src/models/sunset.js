@@ -14,8 +14,16 @@ Sunset.prototype.findData = function(postcode){
     const postcodeRequest = new RequestHelper(`https://api.postcodes.io/postcodes/${postcode}`);
     postcodeRequest.get()
     .then((data)=>{
-        const latitude = data.result.latitude;
-        const longitude = data.result.longitude;
+        let latitude;
+        let longitude;
+        if(data.result){
+            latitude = data.result.latitude;
+            longitude = data.result.longitude;
+        }
+        else{
+            latitude = null;
+            longitude = null;
+        }
         this.publishSunsetInfo(latitude, longitude);
     })
     .catch((err)=>{
@@ -33,5 +41,6 @@ Sunset.prototype.publishSunsetInfo = function(latitude, longitude){
         console.log(err);
     });
 }
+
 
 module.exports = Sunset;

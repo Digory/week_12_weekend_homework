@@ -39,3 +39,11 @@
     padding-bottom: 1rem;
     color: #cf320a;
   }
+
+  #descriptor{
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 1.2rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

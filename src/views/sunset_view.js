@@ -13,7 +13,7 @@ SunsetView.prototype.bindEvents = function(){
 
 SunsetView.prototype.render = function(sunsetData){
     const sunsetTime = document.createElement('h3');
-    sunsetTime.textContent = `The sun will set at ${sunsetData.results.sunset} today`;
+    sunsetTime.textContent = (sunsetData.results)? `The sun will set at ${sunsetData.results.sunset} today` : 'Please enter a valid postcode';
     this.container.appendChild(sunsetTime);
 }
 
